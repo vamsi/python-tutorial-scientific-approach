@@ -69,7 +69,7 @@ familiar from other programming languages.
 
 ```python
 x = 3
-print type(x) # Prints "<type 'int'>"
+print(type(x)) # Prints "<type 'int'>"
 print(x)       # Prints "3"
 print(x + 1)   # Addition; prints "4"
 print(x - 1)   # Subtraction; prints "2"
@@ -111,25 +111,28 @@ print(t != f)  # Logical XOR; prints "True"
 hello = 'hello'   # String literals can use single quotes
 world = "world"   # or double quotes; it does not matter.
 print(hello)       # Prints "hello"
-print(len(hello))  # String length; prints "5"
+print(len(hello))  # Prints string length
 message = hello + ' ' + world  # String concatenation
-print(message)  # prints "hello world"
-message_format = '%s %s %d' % (hello, world, 12)  # sprintf style string formatting
+print(message)  # Prints "hello world"
+message_format = '%s %s %d' % (hello, world, 12)
 print(message_format)  # prints "hello world 12"
 ```
 
 String objects have a bunch of useful methods; for example:
 
 ```python
-
 s = "hello"
-print(s.capitalize())  # Capitalize a string; prints "Hello"
-print(s.upper())       # Convert a string to uppercase; prints "HELLO"
-print(s.rjust(7))      # Right-justify a string, padding with spaces; prints "  hello"
-print(s.center(7))     # Center a string, padding with spaces; prints " hello "
-print(s.replace('l', '(ell)'))  # Replace all instances of one substring with another;
-                               # prints "he(ell)(ell)o"
-print('  world '.strip())  # Strip leading and trailing whitespace; prints "world"
+print(s.capitalize())  # Capitalize a string prints, "Hello"
+print(s.upper())       # Convert a string to uppercase, prints "HELLO"
+print(s.rjust(7))
+# Right-justify a string, padding with spaces; prints "  hello"
+print(s.center(7))
+# Center a string, padding with spaces; prints " hello "
+print(s.replace('l', '(ell)'))
+# Replace all instances of one substring with another.
+# prints "he(ell)(ell)o"
+print('  world '.strip())
+# Strip leading and trailing whitespace; prints "world"
 ```
 
 You can find a list of all string methods [in the documentation](https://docs.python.org/2/library/stdtypes.html#string-methods).
@@ -144,15 +147,15 @@ A list is the Python equivalent of an array, but is resizable
 and can contain elements of different types:
 
 ```python
-xs = [3, 1, 2]   # Create a list
-print(xs, xs[2])  # Prints "[3, 1, 2] 2"
-print(xs[-1])     # Negative indices count from the end of the list; prints "2"
-xs[2] = 'foo'    # Lists can contain elements of different types
-print(xs)        # Prints "[3, 1, 'foo']"
-xs.append('bar') # Add a new element to the end of the list
-print(xs)        # Prints "[3, 1, 'foo', 'bar']"
-x = xs.pop()     # Remove and return the last element of the list
-print(x, xs)     # Prints "bar [3, 1, 'foo']"
+nums = [3, 1, 2]   # Create a list
+print(nums, nums[2])  # Prints "[3, 1, 2] 2"
+print(nums[-1])   # Negative indices count from the end of the list prints "2"
+nums[2] = 'foo'    # Lists can contain elements of different types
+print(nums)        # Prints "[3, 1, 'foo']"
+nums.append('bar')  # Add a new element to the end of the list
+print(nums)        # Prints "[3, 1, 'foo', 'bar']"
+x = nums.pop()     # Remove and return the last element of the list
+print(x, nums)     # Prints "bar [3, 1, 'foo']"
 ```
 As usual, you can find all the gory details about lists
 [in the documentation](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists).
@@ -162,14 +165,13 @@ As usual, you can find all the gory details about lists
 In addition to accessing list elements one at a time, Python provides concise syntax to access sublists; this is known as *slicing*:
 
 ```python
-nums = range(5)    # range is a built-in function that creates a list of integers
+nums = list(range(5))    # range is a built-in function that creates a list of integers.
 print(nums)         # Prints "[0, 1, 2, 3, 4]"
 print(nums[2:4])    # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
 print(nums[2:])     # Get a slice from index 2 to the end; prints "[2, 3, 4]"
 print(nums[:2])     # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
 print(nums[:])      # Get a slice of the whole list; prints ["0, 1, 2, 3, 4]"
 print(nums[:-1])    # Slice indices can be negative; prints ["0, 1, 2, 3]"
-nums[2:4] = [8, 9] # Assign a new sublist to a slice
 print(nums)         # Prints "[0, 1, 8, 9, 4]"
 ```
 
@@ -178,7 +180,7 @@ We will see slicing again in the context of numpy arrays.
 **Loops:** You can loop over the elements of a list like this:
 
 ```python
-animals = ['cat', 'dog', 'monkey']
+animals = ['Cat', 'Dog', 'Monkey']
 for animal in animals:
     print(animal)
 # Prints "cat", "dog", "monkey", each on its own line.
@@ -187,10 +189,10 @@ for animal in animals:
 If you want access to the index of each element within the body of a loop, use the built-in `enumerate` function:
 
 ```python
-animals = ['cat', 'dog', 'monkey']
-for(idx, animal in enumerate(animals)):
+animals = ['Cat', 'Dog', 'Monkey']
+for idx, animal in enumerate(animals):
     print('#%d: %s' % (idx + 1, animal))
-# Prints "#1: cat", "#2: dog", "#3: monkey", each on its own line
+# Prints "#1: Cat", "#2: Dog", "#3: Monkey", each on its own line .
 ```
 
 **List comprehensions:**
@@ -259,13 +261,12 @@ for animal in d:
 # Prints "A person has 2 legs", "A spider has 8 legs", "A cat has 4 legs"
 ```
 
-If you want access to keys and their corresponding values, use the `iteritems` method:
+If you want access to keys and their corresponding values, use the `items` method:
 
 ```python
 d = {'person': 2, 'cat': 4, 'spider': 8}
-for animal, legs in d.iteritems():
+for animal, legs in d.items():
     print('A %s has %d legs' % (animal, legs))
-# Prints "A person has 2 legs", "A spider has 8 legs", "A cat has 4 legs"
 ```
 
 **Dictionary comprehensions:**
@@ -290,7 +291,8 @@ print('fish' in animals)  # prints "False"
 animals.add('fish')      # Add an element to a set
 print('fish' in animals)  # Prints "True"
 print(len(animals))       # Number of elements in a set; prints "3"
-animals.add('cat')       # Adding an element that is already in the set does nothing
+# Adding an element that is already in the set does nothing
+animals.add('cat')
 print(len(animals))      # Prints "3"
 animals.remove('cat')    # Remove an element from a set
 print(len(animals))      # Prints "2"
