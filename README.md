@@ -121,15 +121,18 @@ print(message_format)  # prints "hello world 12"
 String objects have a bunch of useful methods; for example:
 
 ```python
-
 s = "hello"
-print(s.capitalize())  # Capitalize a string; prints "Hello"
-print(s.upper())       # Convert a string to uppercase; prints "HELLO"
-print(s.rjust(7))      # Right-justify a string, padding with spaces; prints "  hello"
-print(s.center(7))     # Center a string, padding with spaces; prints " hello "
-print(s.replace('l', '(ell)'))  # Replace all instances of one substring with another;
-                               # prints "he(ell)(ell)o"
-print('  world '.strip())  # Strip leading and trailing whitespace; prints "world"
+print(s.capitalize())  # Capitalize a string prints, "Hello"
+print(s.upper())       # Convert a string to uppercase, prints "HELLO"
+print(s.rjust(7))
+# Right-justify a string, padding with spaces; prints "  hello"
+print(s.center(7))
+# Center a string, padding with spaces; prints " hello "
+print(s.replace('l', '(ell)'))
+# Replace all instances of one substring with another.
+# prints "he(ell)(ell)o"
+print('  world '.strip())
+# Strip leading and trailing whitespace; prints "world"
 ```
 
 You can find a list of all string methods [in the documentation](https://docs.python.org/2/library/stdtypes.html#string-methods).
