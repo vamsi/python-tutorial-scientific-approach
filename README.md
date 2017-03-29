@@ -69,19 +69,20 @@ familiar from other programming languages.
 
 ```python
 x = 3
-print(type(x)) # Prints "<type 'int'>"
-print(x)       # Prints "3"
-print(x + 1)   # Addition; prints "4"
-print(x - 1)   # Subtraction; prints "2"
-print(x * 2)   # Multiplication; prints "6"
-print(x ** 2)  # Exponentiation; prints "9"
+print(type(x))  # Prints "<type 'int'>"
+print(x)        # Prints "3"
+print(x + 1)    # Addition; prints "4"
+print(x - 1)    # Subtraction; prints "2"
+print(x * 2)    # Multiplication; prints "6"
+print(x ** 2)   # Exponentiation; prints "9"
 x += 1
-print(x)  # Prints "4"
+print(x)        # Prints "4"
 x *= 2
-print(x)  # Prints "8"
+print(x)        # Prints "8"
 y = 2.5
-print(type(y)) # Prints "<type 'float'>"
-print(y, y + 1, y * 2, y ** 2) # Prints "2.5 3.5 5.0 6.25"
+print(type(y))  # Prints "<type 'float'>"
+print(y, y + 1, y * 2, y ** 2)  # Prints "2.5 3.5 5.0 6.25"
+
 ```
 
 Note that unlike many languages, Python does not have unary increment (`x++`)
@@ -108,22 +109,24 @@ print(t != f)  # Logical XOR; prints "True"
 **Strings:** Python has great support for strings:
 
 ```python
-hello = 'hello'   # String literals can use single quotes
-world = "world"   # or double quotes; it does not matter.
+hello = 'hello'    # String literals can use single quotes
+world = "world"    # or double quotes; it does not matter.
 print(hello)       # Prints "hello"
 print(len(hello))  # Prints string length
 message = hello + ' ' + world  # String concatenation
-print(message)  # Prints "hello world"
+print(message)                 # Prints "hello world"
 message_format = '%s %s %d' % (hello, world, 12)
-print(message_format)  # prints "hello world 12"
+print(message_format)          # prints "hello world 12"
 ```
 
 String objects have a bunch of useful methods; for example:
 
 ```python
 s = "hello"
-print(s.capitalize())  # Capitalize a string prints, "Hello"
-print(s.upper())       # Convert a string to uppercase, prints "HELLO"
+print(s.capitalize())
+# Capitalize a string prints, "Hello"
+print(s.upper())
+# Convert a string to uppercase, prints "HELLO"
 print(s.rjust(7))
 # Right-justify a string, padding with spaces; prints "  hello"
 print(s.center(7))
@@ -147,15 +150,24 @@ A list is the Python equivalent of an array, but is resizable
 and can contain elements of different types:
 
 ```python
-nums = [3, 1, 2]   # Create a list
-print(nums, nums[2])  # Prints "[3, 1, 2] 2"
-print(nums[-1])   # Negative indices count from the end of the list prints "2"
-nums[2] = 'foo'    # Lists can contain elements of different types
-print(nums)        # Prints "[3, 1, 'foo']"
-nums.append('bar')  # Add a new element to the end of the list
-print(nums)        # Prints "[3, 1, 'foo', 'bar']"
-x = nums.pop()     # Remove and return the last element of the list
-print(x, nums)     # Prints "bar [3, 1, 'foo']"
+nums = [3, 1, 2]
+# Create a list
+print(nums, nums[2])
+# Prints "[3, 1, 2] 2"
+print(nums[-1])
+# Negative indices count from the end of the list prints "2"
+nums[2] = 'foo'
+# Lists can contain elements of different types
+print(nums)
+# Prints "[3, 1, 'foo']"
+nums.append('bar')
+# Add a new element to the end of the list
+print(nums)
+# Prints "[3, 1, 'foo', 'bar']"
+x = nums.pop()
+# Remove and return the last element of the list
+print(x, nums)
+# Prints "bar [3, 1, 'foo']"
 ```
 As usual, you can find all the gory details about lists
 [in the documentation](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists).
@@ -166,13 +178,13 @@ In addition to accessing list elements one at a time, Python provides concise sy
 
 ```python
 nums = list(range(5))    # range is a built-in function that creates a list of integers.
-print(nums)         # Prints "[0, 1, 2, 3, 4]"
-print(nums[2:4])    # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
-print(nums[2:])     # Get a slice from index 2 to the end; prints "[2, 3, 4]"
-print(nums[:2])     # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
-print(nums[:])      # Get a slice of the whole list; prints ["0, 1, 2, 3, 4]"
-print(nums[:-1])    # Slice indices can be negative; prints ["0, 1, 2, 3]"
-print(nums)         # Prints "[0, 1, 8, 9, 4]"
+print(nums)              # Prints "[0, 1, 2, 3, 4]"
+print(nums[2:4])         # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
+print(nums[2:])          # Get a slice from index 2 to the end; prints "[2, 3, 4]"
+print(nums[:2])          # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
+print(nums[:])           # Get a slice of the whole list; prints ["0, 1, 2, 3, 4]"
+print(nums[:-1])         # Slice indices can be negative; prints ["0, 1, 2, 3]"
+print(nums)              # Prints "[0, 1, 8, 9, 4]"
 ```
 
 We will see slicing again in the context of numpy arrays.
@@ -229,24 +241,16 @@ A dictionary stores (key, value) pairs, similar to a `Map` in Java. You can use 
 
 ```python
 d = {'cat': 'cute', 'dog': 'furry'}  # Create a new dictionary with some data
-
-print(d['cat'])       # Get an entry from a dictionary; prints "cute"
-
-print('cat' in d)    # Check if a dictionary has a given key; 
+print(d['cat'])                      # Get an entry from a dictionary; prints "cute"
+print('cat' in d)                    # Check if a dictionary has a given key; 
 prints "True"
-
-d['fish'] = 'wet'    # Set an entry in a dictionary
-print(d['fish'])     # Prints "wet"
-
-# print(d['monkey'])  # KeyError: 'monkey' not a key of d
-
-print(d.get('monkey', 'N/A'))  # Get an element with a default; prints "N/A"
-
-print(d.get('fish', 'N/A'))    # Get an element with a default; prints "wet"
-
-del d['fish']        # Remove an element from a dictionary
-
-print(d.get('fish', 'N/A')) # "fish" is no longer a key; prints "N/A"
+d['fish'] = 'wet'                    # Set an entry in a dictionary
+print(d['fish'])                     # Prints "wet"
+                                     # print(d['monkey']) gives KeyError: 'monkey' not a key of d
+print(d.get('monkey', 'N/A'))        # Get an element with a default; prints "N/A"
+print(d.get('fish', 'N/A'))          # Get an element with a default; prints "wet"
+del d['fish']                        # Remove an element from a dictionary
+print(d.get('fish', 'N/A'))          # "fish" is no longer a key; prints "N/A"
 ```
 You can find all you need to know about dictionaries
 [in the documentation](https://docs.python.org/2/library/stdtypes.html#dict).
@@ -288,14 +292,14 @@ the following:
 animals = {'cat', 'dog'}
 print('cat' in animals)   # Check if an element is in a set; prints "True"
 print('fish' in animals)  # prints "False"
-animals.add('fish')      # Add an element to a set
+animals.add('fish')       # Add an element to a set
 print('fish' in animals)  # Prints "True"
 print(len(animals))       # Number of elements in a set; prints "3"
-# Adding an element that is already in the set does nothing
+                          # Adding an element that is already in the set does nothing
 animals.add('cat')
-print(len(animals))      # Prints "3"
-animals.remove('cat')    # Remove an element from a set
-print(len(animals))      # Prints "2"
+print(len(animals))       # Prints "3"
+animals.remove('cat')     # Remove an element from a set
+print(len(animals))       # Prints "2"
 ```
 
 As usual, everything you want to know about sets can be found
@@ -333,10 +337,10 @@ Here is a trivial example:
 
 ```python
 d = {(x, x + 1): x for x in range(10)}  # Create a dictionary with tuple keys
-t = (5, 6)        # Create a tuple
-print(type(t))    # Prints "<type 'tuple'>"
-print(d[t])       # Prints "5"
-print(d[(1, 2)])  # Prints "1"
+t = (5, 6)                              # Create a tuple
+print(type(t))                          # Prints "<type 'tuple'>"
+print(d[t])                             # Prints "5"
+print(d[(1, 2)])                        # Prints "1"
 ```
 
 [The documentation](https://docs.python.org/2/tutorial/datastructures.html#tuples-and-sequences) has more information about tuples.
@@ -355,6 +359,7 @@ def sign(x):
     else:
         return 'zero'
 
+
 for x in [-1, 0, 1]:
     print(sign(x))
 # Prints "negative", "zero", "positive"
@@ -363,13 +368,14 @@ for x in [-1, 0, 1]:
 We will often define functions to take optional keyword arguments, like this:
 
 ```python
-def hello(name, loud=False):
+def hello(name, loud=True):
     if loud:
-        print('HELLO, %s!'.format(name.upper()))
+        print('HELLO, {}!'.format(name.upper()))
     else:
-        print('Hello, %s'.format(name))
+        print('Hello, {}'.format(name))
 
-hello('Stark') # Prints "Hello, Stark"
+
+hello('Stark')            # Prints "Hello, Stark"
 hello('Bond', loud=True)  # Prints "HELLO, BOND!"
 ```
 
@@ -379,21 +385,23 @@ The syntax for defining classes in Python is straightforward:
 
 ```python
 class Greeter(object):
-    
+
     # Constructor
     def __init__(self, name):
-        self.name = name  # Create an instance variable
-        
+        self.name = name  
+    # Create an instance variable
+
     # Instance method
     def greet(self, loud=False):
         if loud:
-            print('HELLO, %s!'.format(self.name.upper())
+            print('HELLO, {}!'.format(self.upper()))
         else:
-            print('Hello, %s'.format(self.name))
-        
-g = Greeter('Stark')  # Construct an instance of the Greeter class
-g.greet()            # Call an instance method; prints "Hello, Fred"
-g.greet(loud=True)   # Call an instance method; prints "HELLO, STARK!"
+            print('Hello, {}'.format(self))
+
+
+g = Greeter('Stark')   # Construct an instance of the Greeter class
+g.greet()              # Call an instance method; prints "Hello, Fred"
+g.greet(loud=True)     # Call an instance method; prints "HELLO, STARK!"
 ```
 You can read a lot more about Python classes
 [in the documentation](https://docs.python.org/2/tutorial/classes.html).
@@ -420,15 +428,15 @@ and access elements using square brackets:
 import numpy as np
 
 a = np.array([1, 2, 3])  # Create a rank 1 array
-print type(a)            # Prints "<type 'numpy.ndarray'>"
+print(type(a))           # Prints "<type 'numpy.ndarray'>"
 print(a.shape)           # Prints "(3,)"
 print(a[0], a[1], a[2])  # Prints "1 2 3"
 a[0] = 5                 # Change an element of the array
 print(a)                 # Prints "[5, 2, 3]"
 
-b = np.array([[1,2,3],[4,5,6]])   # Create a rank 2 array
-print(b.shape)                    # Prints "(2, 3)"
-print(b[0, 0], b[0, 1], b[1, 0])  # Prints "1 2 4"
+b = np.array([[1, 2, 3], [4, 5, 6]])   # Create a rank 2 array
+print(b.shape)                         # Prints "(2, 3)"
+print(b[0, 0], b[0, 1], b[1, 0])       # Prints "1 2 4"
 ```
 
 Numpy also provides many functions to create arrays:
@@ -436,24 +444,16 @@ Numpy also provides many functions to create arrays:
 ```python
 import numpy as np
 
-a = np.zeros((2,2))  # Create an array of all zeros
-print(a)              # Prints "[[ 0.  0.]
-                     #          [ 0.  0.]]"
-    
-b = np.ones((1,2))   # Create an array of all ones
-print(b)              # Prints "[[ 1.  1.]]"
-
-c = np.full((2,2), 7) # Create a constant array
-print(c)               # Prints "[[ 7.  7.]
-                      #          [ 7.  7.]]"
-
-d = np.eye(2)        # Create a 2x2 identity matrix
-print(d)              # Prints "[[ 1.  0.]
-                     #          [ 0.  1.]]"
-    
-e = np.random.random((2,2)) # Create an array filled with random values
-print(e)                     # Might print "[[ 0.91940167  0.08143941]
-                            #               [ 0.68744134  0.87236687]]"
+a = np.zeros((2, 2))    # Create an array of all zeros
+print(a)                # Prints "[[ 0.  0.]
+b = np.ones((1, 2))     # Create an array of all ones
+print(b)                # Prints "[[ 1.  1.]]"
+c = np.full((2, 2), 7)  # Create a constant array
+print(c)                # Prints "[[ 7.  7.]
+d = np.eye(2)           # Create a 2x2 identity matrix
+print(d)                # Prints "[[ 1.  0.]
+e = np.random.random((2, 2))  # Create an array filled with random values
+print(e)                      # Might print "[[ 0.91940167  0.08143941]
 ```
 You can read about other methods of array creation
 [in the documentation](http://docs.scipy.org/doc/numpy/user/basics.creation.html#arrays-creation).
@@ -472,22 +472,22 @@ of the array:
 import numpy as np
 
 # Create the following rank 2 array with shape (3, 4)
-# [[ 1  2  3  4]
+#  [ 1  2  3  4]
 #  [ 5  6  7  8]
 #  [ 9 10 11 12]]
-a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 
 # Use slicing to pull out the subarray consisting of the first 2 rows
 # and columns 1 and 2; b is the following array of shape (2, 2):
-# [[2 3]
-#  [6 7]]
+#  [2 3]
+#  [6 7]
 b = a[:2, 1:3]
 
 # A slice of an array is a view into the same data, so modifying it
 # will modify the original array.
 print(a[0, 1])   # Prints "2"
 b[0, 0] = 77     # b[0, 0] is the same piece of data as a[0, 1]
-print(a[0, 1])    # Prints "77"
+print(a[0, 1])   # Prints "77"
 ```
 
 You can also mix integer indexing with slice indexing.
@@ -500,27 +500,29 @@ Note that this is quite different from the way that MATLAB handles array slicing
 import numpy as np
 
 # Create the following rank 2 array with shape (3, 4)
-# [[ 1  2  3  4]
+#  [ 1  2  3  4]
 #  [ 5  6  7  8]
-#  [ 9 10 11 12]]
-a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+#  [ 9 10 11 12]
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 
 # Two ways of accessing the data in the middle row of the array.
 # Mixing integer indexing with slices yields an array of lower rank,
 # while using only slices yields an array of the same rank as the
 # original array:
-row_r1 = a[1, :]    # Rank 1 view of the second row of a  
-row_r2 = a[1:2, :]  # Rank 2 view of the second row of a
-print(row_r1, row_r1.shape)  # Prints "[5 6 7 8] (4,)"
-print(row_r2, row_r2.shape)  # Prints "[[5 6 7 8]] (1, 4)"
-
-# We can make the same distinction when accessing columns of an array:
+row_r1 = a[1, :]             # Rank 1 view of the second row of a
+row_r2 = a[1:2, :]           # Rank 2 view of the second row of a
+print(row_r1, row_r1.shape)  # Prints "[5 6 7 8](4,)"
+print(row_r2, row_r2.shape)  # Prints "[[5 6 7 8]](1, 4)"
+                             # We can make the same distinction when accessing columns of an array:
 col_r1 = a[:, 1]
 col_r2 = a[:, 1:2]
-print(col_r1, col_r1.shape)  # Prints "[ 2  6 10] (3,)"
-print(col_r2, col_r2.shape)  # Prints "[[ 2]
-                            #          [ 6]
-                            #          [10]] (3, 1)"
+print(col_r1, col_r1.shape)  # Prints "[ 2  6 10](3,)"
+print(col_r2, col_r2.shape)  
+"""
+Prints "[[ 2]
+[6]
+[10](3, 1)
+"""
 ```
 
 **Integer array indexing:**
@@ -530,12 +532,13 @@ When you index into numpy arrays using slicing, the resulting array view will al
 ```python
 import numpy as np
 
-a = np.array([[1,2], [3, 4], [5, 6]])
+a = np.array([[1, 2], [3, 4], [5, 6]])
 
 # An example of integer array indexing.
-# The returned array will have shape (3,) and 
+# The returned array will have shape (3,) and
 
-print(a[[0, 1, 2], [0, 1, 0]])  # Prints "[1 4 5]"
+print(a[[0, 1, 2], [0, 1, 0]])
+# Prints "[1 4 5]"
 
 # The above example of integer array indexing is equivalent to this:
 print(np.array([a[0, 0], a[1, 1], a[2, 0]]))  # Prints "[1 4 5]"
@@ -545,8 +548,8 @@ print(np.array([a[0, 0], a[1, 1], a[2, 0]]))  # Prints "[1 4 5]"
 print(a[[0, 0], [1, 1]])  # Prints "[2 2]"
 
 # Equivalent to the previous integer array indexing example
-print(np.array([a[0, 1], a[0, 1]]))  # Prints "[2 2]"
-
+print(np.array([a[0, 1], a[0, 1]]))
+# Prints "[2 2]"
 ```
 
 One useful trick with integer array indexing is selecting or mutating one element from each row of a matrix:
@@ -555,26 +558,33 @@ One useful trick with integer array indexing is selecting or mutating one elemen
 import numpy as np
 
 # Create a new array from which we will select elements
-a = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 
-print(a)  # prints "array([[ 1,  2,  3],
-         #                [ 4,  5,  6],
-         #                [ 7,  8,  9],
-         #                [10, 11, 12]])"
+print(a)
+"""
+prints array([[ 1,  2,  3],
+[ 4,  5,  6],
+[ 7,  8,  9],
+[10, 11, 12]])
+"""
 
 # Create an array of indices
 b = np.array([0, 2, 0, 1])
 
 # Select one element from each row of a using the indices in b
-print(a[np.arange(4), b])  # Prints "[ 1  6  7 11]"
+print(a[np.arange(4), b])
+# Prints "[ 1  6  7 11]"
 
 # Mutate one element from each row of a using the indices in b
 a[np.arange(4), b] += 10
 
-print(a)  # prints "array([[11,  2,  3],
-         #                [ 4,  5, 16],
-         #                [17,  8,  9],
-         #                [10, 21, 12]])
+print(a)
+"""
+prints array([[11,  2,  3],
+[ 4,  5, 16],
+[17,  8,  9],
+[10, 21, 12]])
+"""
 ```
 
 **Boolean array indexing:**
@@ -585,24 +595,30 @@ Frequently this type of indexing is used to select the elements of an array that
 ```python
 import numpy as np
 
-a = np.array([[1,2], [3, 4], [5, 6]])
+a = np.array([[1, 2], [3, 4], [5, 6]])
 
-bool_idx = (a > 2)  # Find the elements of a that are bigger than 2;
-                    # this returns a numpy array of Booleans of the same
-                    # shape as a, where each slot of bool_idx tells
-                    # whether that element of a is > 2.
-            
-print(bool_idx)     # Prints "[[False False]
-                    #          [ True  True]
-                    #          [ True  True]]"
+bool_idx = (a > 2)
+"""
+Find the elements of a that are bigger than 2;
+this returns a numpy array of Booleans of the same
+shape as a, where each slot of bool_idx tells
+whether that element of a is > 2.
+"""
+print(bool_idx)
+"""
+Prints "[[False False]
+[ True  True]
+[ True  True]]"
 
-# We use boolean array indexing to construct a rank 1 array
-# consisting of the elements of a corresponding to the True values
-# of bool_idx
-print(a[bool_idx])  # Prints "[3 4 5 6]"
-
+We use boolean array indexing to construct a rank 1 array
+consisting of the elements of a corresponding to the True values
+of bool_idx
+"""
+print(a[bool_idx])
+# Prints "[3 4 5 6]"
 # We can do all of the above in a single concise statement:
-print(a[a > 2])     # Prints "[3 4 5 6]"
+print(a[a > 2])
+# Prints "[3 4 5 6]"
 ```
 
 For brevity we have left out a lot of details about numpy array indexing; if you want to know more you should
@@ -621,14 +637,14 @@ Here is an example:
 ```python
 import numpy as np
 
-x = np.array([1, 2])  # Let numpy choose the datatype
-print(x.dtype)         # Prints "int64"
+x = np.array([1, 2])         # Let numpy choose the datatype
+print(x.dtype)               # Prints "int64"
 
-x = np.array([1.0, 2.0])  # Let numpy choose the datatype
-print(x.dtype)             # Prints "float64"
+x = np.array([1.0, 2.0])     # Let numpy choose the datatype
+print(x.dtype)               # Prints "float64"
 
 x = np.array([1, 2], dtype=np.int64)  # Force a particular datatype
-print(x.dtype)                         # Prints "int64"
+print(x.dtype)                        # Prints "int64"
 ```
 You can read all about numpy datatypes
 [in the documentation](http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html).
@@ -641,24 +657,24 @@ both as operator overloads and as functions in the numpy module:
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]], dtype=np.float64)
-y = np.array([[5,6],[7,8]], dtype=np.float64)
+x = np.array([[1, 2], [3, 4]], dtype=np.float64)
+y = np.array([[5, 6], [7, 8]], dtype=np.float64)
 
 # Elementwise sum; both produce the array
-#  [[ 6.0  8.0]
-#  [10.0 12.0]]
+# [[ 6.0  8.0]
+# [10.0 12.0]]
 print(x + y)
 print(np.add(x, y))
 
 # Elementwise difference; both produce the array
-#  [[-4.0 -4.0]
-#  [-4.0 -4.0]]
+# [[-4.0 -4.0]
+# [-4.0 -4.0]]
 print(x - y)
 print(np.subtract(x, y))
 
 # Elementwise product; both produce the array
-#  [[ 5.0 12.0]
-#  [21.0 32.0]]
+# [[ 5.0 12.0]
+# [21.0 32.0]]
 print(x * y)
 print(np.multiply(x, y))
 
@@ -679,10 +695,10 @@ Note that unlike MATLAB, `*` is elementwise multiplication, not matrix multiplic
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]])
-y = np.array([[5,6],[7,8]])
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6], [7, 8]])
 
-v = np.array([9,10])
+v = np.array([9, 10])
 w = np.array([11, 12])
 
 # Inner product of vectors; both produce 219
@@ -706,7 +722,7 @@ arrays; one of the most useful is `sum`:
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]])
+x = np.array([[1, 2], [3, 4]])
 
 print(np.sum(x))  # Compute sum of all elements; prints "10"
 print(np.sum(x, axis=0))  # Compute sum of each column; prints "[4 6]"
@@ -717,20 +733,27 @@ You can find the full list of mathematical functions provided by NumPy [in the d
 Apart from computing mathematical functions using arrays, we frequently need to reshape or otherwise manipulate data in arrays. The simplest example of this type of operation is transposing a matrix; to transpose a matrix, simply use the `T` attribute of an array object:
 
 ```python
-
 import numpy as np
 
-x = np.array([[1,2], [3,4]])
-print(x)   # Prints "[[1 2]
-           #          [3 4]]"
-print(x.T) # Prints "[[1 3]
-           #          [2 4]]"
-
+x = np.array([[1, 2], [3, 4]])
+print(x)
+print(x.T)
 # Note that taking the transpose of a rank 1 array does nothing:
+v = np.array([1, 2, 3])
+print(v)
+print(v.T)
+"""
+Output
+[[1 2]
+ [3 4]]
 
-v = np.array([1,2,3])
-print(v)     # Prints "[1 2 3]"
-print(v.T)  # Prints "[1 2 3]"
+[[1 3]
+ [2 4]]
+
+[1 2 3]
+
+[1 2 3]
+"""
 
 ```
 
@@ -747,24 +770,24 @@ larger array, and we want to use the smaller array multiple times to perform som
 For example, suppose that we want to add a constant vector to each row of a matrix. We could do it like this:
 
 ```python
-
 import numpy as np
 
 # We will add the vector v to each row of the matrix x,
 # storing the result in the matrix y
-x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 v = np.array([1, 0, 1])
-y = np.empty_like(x)   # Create an empty matrix with the same shape as x
-
+y = np.empty_like(x)
+# Create an empty matrix with the same shape as x
 # Add the vector v to each row of the matrix x with an explicit loop
 for i in range(4):
     y[i, :] = x[i, :] + v
-
-# Now y is the following
-# [[ 2  2  4]
-#  [ 5  5  7]
-#  [ 8  8 10]
-#  [11 11 13]]
+"""
+Now y is the following
+[[ 2  2  4]
+[ 5  5  7]
+[ 8  8 10]
+[11 11 13]]
+"""
 print(y)
 ```
 
@@ -779,34 +802,43 @@ import numpy as np
 
 # We will add the vector v to each row of the matrix x,
 # storing the result in the matrix y
-x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 v = np.array([1, 0, 1])
 vv = np.tile(v, (4, 1))  # Stack 4 copies of v on top of each other
-print(vv)                # Prints "[[1 0 1]
-                         #          [1 0 1]
-                         #          [1 0 1]
-                         #          [1 0 1]]"
+print(vv)
+"""
+Prints "[[1 0 1]
+[1 0 1]
+[1 0 1]
+[1 0 1]]"
+"""
 y = x + vv  # Add x and vv elementwise
-print(y) # Prints "[[ 2  2  4
-         #          [ 5  5  7]
-         #          [ 8  8 10]
-         #          [11 11 13]]"
+print(y)
+"""
+ Prints "[[ 2  2  4
+[ 5  5  7]
+[ 8  8 10]
+[11 11 13]]"
+"""
+
 ```
 
 Numpy broadcasting allows us to perform this computation without actually creating multiple copies of `v`. Consider this version, using broadcasting:
 
 ```python
 import numpy as np
-
 # We will add the vector v to each row of the matrix x,
 # storing the result in the matrix y
-x = np.array([[1,2,3], [4,5,6], [7,8,9], [10, 11, 12]])
+x = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 v = np.array([1, 0, 1])
 y = x + v  # Add v to each row of x using broadcasting
-print(y) # Prints "[[ 2  2  4]
-         #          [ 5  5  7]
-         #          [ 8  8 10]
-         #          [11 11 13]]"
+print(y)
+"""
+ Prints "[[ 2  2  4]
+[ 5  5  7]
+[ 8  8 10]
+[11 11 13]]"
+"""
 ```
 
 The line `y = x + v` works even though `x` has shape `(4, 3)` and `v` has shape
@@ -835,44 +867,51 @@ Here are some applications of broadcasting:
 import numpy as np
 
 # Compute outer product of vectors
-v = np.array([1,2,3])  # v has shape (3,)
-w = np.array([4,5])    # w has shape (2,)
-# To compute an outer product, we first reshape v to be a column
-# vector of shape (3, 1); we can then broadcast it against w to yield
-# an output of shape (3, 2), which is the outer product of v and w:
-# [[ 4  5]
-#  [ 8 10]
-#  [12 15]]
+v = np.array([1, 2, 3])  # v has shape (3,)
+w = np.array([4, 5])    # w has shape (2,)
+"""
+To compute an outer product, we first reshape v to be a column
+vector of shape (3, 1); we can then broadcast it against w to yield
+an output of shape (3, 2), which is the outer product of v and w:
+[[ 4  5]
+ [ 8 10]
+ [12 15]]
+ """
 print(np.reshape(v, (3, 1)) * w)
 
 # Add a vector to each row of a matrix
-x = np.array([[1,2,3], [4,5,6]])
-# x has shape (2, 3) and v has shape (3,) so they broadcast to (2, 3),
-# giving the following matrix:
-# [[2 4 6]
-#  [5 7 9]]
+x = np.array([[1, 2, 3], [4, 5, 6]])
+"""
+x has shape (2, 3) and v has shape (3,) so they broadcast to (2, 3),
+giving the following matrix:
+[[2 4 6]
+ [5 7 9]]
+ """
 print(x + v)
-
-# Add a vector to each column of a matrix
-# x has shape (2, 3) and w has shape (2,).
-# If we transpose x then it has shape (3, 2) and can be broadcast
-# against w to yield a result of shape (3, 2); transposing this result
-# yields the final result of shape (2, 3) which is the matrix x with
-# the vector w added to each column. Gives the following matrix:
-# [[ 5  6  7]
-#  [ 9 10 11]]
-print(x.T + w).T
-# Another solution is to reshape w to be a row vector of shape (2, 1);
-# we can then broadcast it directly against x to produce the same
-# output.
+"""
+Add a vector to each column of a matrix
+x has shape (2, 3) and w has shape (2,).
+If we transpose x then it has shape (3, 2) and can be broadcast
+against w to yield a result of shape (3, 2); transposing this result
+yields the final result of shape (2, 3) which is the matrix x with
+the vector w added to each column. Gives the following matrix:
+[[ 5  6  7]
+ [ 9 10 11]]
+ """
+print((x.T + w).T)
+"""
+Another solution is to reshape w to be a row vector of shape (2, 1);
+we can then broadcast it directly against x to produce the same output.
+"""
 print(x + np.reshape(w, (2, 1)))
-
-# Multiply a matrix by a constant:
-# x has shape (2, 3). Numpy treats scalars as arrays of shape ();
-# these can be broadcast together to shape (2, 3), producing the
-# following array:
-# [[ 2  4  6]
-#  [ 8 10 12]]
+"""
+Multiply a matrix by a constant:
+x has shape (2, 3). Numpy treats scalars as arrays of shape ();
+these can be broadcast together to shape (2, 3), producing the
+following array:
+[[ 2  4  6]
+ [ 8 10 12]]
+"""
 print(x * 2)
 ```
 
