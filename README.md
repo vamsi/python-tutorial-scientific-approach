@@ -114,9 +114,9 @@ world = "world"    # or double quotes; it does not matter.
 print(hello)       # Prints "hello"
 print(len(hello))  # Prints string length
 message = hello + ' ' + world  # String concatenation
-print(message)     # Prints "hello world"
+print(message)                 # Prints "hello world"
 message_format = '%s %s %d' % (hello, world, 12)
-print(message_format)  # prints "hello world 12"
+print(message_format)          # prints "hello world 12"
 ```
 
 String objects have a bunch of useful methods; for example:
@@ -155,7 +155,7 @@ nums = [3, 1, 2]
 print(nums, nums[2])
 # Prints "[3, 1, 2] 2"
 print(nums[-1])
- # Negative indices count from the end of the list prints "2"
+# Negative indices count from the end of the list prints "2"
 nums[2] = 'foo'
 # Lists can contain elements of different types
 print(nums)
@@ -178,13 +178,13 @@ In addition to accessing list elements one at a time, Python provides concise sy
 
 ```python
 nums = list(range(5))    # range is a built-in function that creates a list of integers.
-print(nums)         # Prints "[0, 1, 2, 3, 4]"
-print(nums[2:4])    # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
-print(nums[2:])     # Get a slice from index 2 to the end; prints "[2, 3, 4]"
-print(nums[:2])     # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
-print(nums[:])      # Get a slice of the whole list; prints ["0, 1, 2, 3, 4]"
-print(nums[:-1])    # Slice indices can be negative; prints ["0, 1, 2, 3]"
-print(nums)         # Prints "[0, 1, 8, 9, 4]"
+print(nums)              # Prints "[0, 1, 2, 3, 4]"
+print(nums[2:4])         # Get a slice from index 2 to 4 (exclusive); prints "[2, 3]"
+print(nums[2:])          # Get a slice from index 2 to the end; prints "[2, 3, 4]"
+print(nums[:2])          # Get a slice from the start to index 2 (exclusive); prints "[0, 1]"
+print(nums[:])           # Get a slice of the whole list; prints ["0, 1, 2, 3, 4]"
+print(nums[:-1])         # Slice indices can be negative; prints ["0, 1, 2, 3]"
+print(nums)              # Prints "[0, 1, 8, 9, 4]"
 ```
 
 We will see slicing again in the context of numpy arrays.
@@ -241,24 +241,16 @@ A dictionary stores (key, value) pairs, similar to a `Map` in Java. You can use 
 
 ```python
 d = {'cat': 'cute', 'dog': 'furry'}  # Create a new dictionary with some data
-
-print(d['cat'])      # Get an entry from a dictionary; prints "cute"
-
-print('cat' in d)    # Check if a dictionary has a given key; 
+print(d['cat'])                      # Get an entry from a dictionary; prints "cute"
+print('cat' in d)                    # Check if a dictionary has a given key; 
 prints "True"
-
-d['fish'] = 'wet'    # Set an entry in a dictionary
-print(d['fish'])     # Prints "wet"
-
+d['fish'] = 'wet'                    # Set an entry in a dictionary
+print(d['fish'])                     # Prints "wet"
 # print(d['monkey']) # KeyError: 'monkey' not a key of d
-
-print(d.get('monkey', 'N/A'))  # Get an element with a default; prints "N/A"
-
-print(d.get('fish', 'N/A'))    # Get an element with a default; prints "wet"
-
-del d['fish']        # Remove an element from a dictionary
-
-print(d.get('fish', 'N/A')) # "fish" is no longer a key; prints "N/A"
+print(d.get('monkey', 'N/A'))        # Get an element with a default; prints "N/A"
+print(d.get('fish', 'N/A'))          # Get an element with a default; prints "wet"
+del d['fish']                        # Remove an element from a dictionary
+print(d.get('fish', 'N/A'))          # "fish" is no longer a key; prints "N/A"
 ```
 You can find all you need to know about dictionaries
 [in the documentation](https://docs.python.org/2/library/stdtypes.html#dict).
@@ -303,7 +295,7 @@ print('fish' in animals)  # prints "False"
 animals.add('fish')       # Add an element to a set
 print('fish' in animals)  # Prints "True"
 print(len(animals))       # Number of elements in a set; prints "3"
-# Adding an element that is already in the set does nothing
+                          # Adding an element that is already in the set does nothing
 animals.add('cat')
 print(len(animals))       # Prints "3"
 animals.remove('cat')     # Remove an element from a set
@@ -345,10 +337,10 @@ Here is a trivial example:
 
 ```python
 d = {(x, x + 1): x for x in range(10)}  # Create a dictionary with tuple keys
-t = (5, 6)        # Create a tuple
-print(type(t))    # Prints "<type 'tuple'>"
-print(d[t])       # Prints "5"
-print(d[(1, 2)])  # Prints "1"
+t = (5, 6)                              # Create a tuple
+print(type(t))                          # Prints "<type 'tuple'>"
+print(d[t])                             # Prints "5"
+print(d[(1, 2)])                        # Prints "1"
 ```
 
 [The documentation](https://docs.python.org/2/tutorial/datastructures.html#tuples-and-sequences) has more information about tuples.
@@ -396,7 +388,8 @@ class Greeter(object):
 
     # Constructor
     def __init__(self, name):
-        self.name = name  # Create an instance variable
+        self.name = name  
+    # Create an instance variable
 
     # Instance method
     def greet(self, loud=False):
@@ -517,17 +510,19 @@ a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 # while using only slices yields an array of the same rank as the
 # original array:
 row_r1 = a[1, :]             # Rank 1 view of the second row of a
-row_r2 = a[1:2, :]       # Rank 2 view of the second row of a
+row_r2 = a[1:2, :]           # Rank 2 view of the second row of a
 print(row_r1, row_r1.shape)  # Prints "[5 6 7 8](4,)"
 print(row_r2, row_r2.shape)  # Prints "[[5 6 7 8]](1, 4)"
-
-# We can make the same distinction when accessing columns of an array:
+                             # We can make the same distinction when accessing columns of an array:
 col_r1 = a[:, 1]
 col_r2 = a[:, 1:2]
 print(col_r1, col_r1.shape)  # Prints "[ 2  6 10](3,)"
-print(col_r2, col_r2.shape)  # Prints "[[ 2]
-# [6]
-# [10](3, 1)
+print(col_r2, col_r2.shape)  
+"""
+Prints "[[ 2]
+[6]
+[10](3, 1)
+"""
 ```
 
 **Integer array indexing:**
