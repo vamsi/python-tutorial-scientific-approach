@@ -180,7 +180,7 @@ We will see slicing again in the context of numpy arrays.
 **Loops:** You can loop over the elements of a list like this:
 
 ```python
-animals = ['cat', 'dog', 'monkey']
+animals = ['Cat', 'Dog', 'Monkey']
 for animal in animals:
     print(animal)
 # Prints "cat", "dog", "monkey", each on its own line.
