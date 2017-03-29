@@ -305,9 +305,9 @@ print('fish' in animals)  # Prints "True"
 print(len(animals))       # Number of elements in a set; prints "3"
 # Adding an element that is already in the set does nothing
 animals.add('cat')
-print(len(animals))      # Prints "3"
-animals.remove('cat')    # Remove an element from a set
-print(len(animals))      # Prints "2"
+print(len(animals))       # Prints "3"
+animals.remove('cat')     # Remove an element from a set
+print(len(animals))       # Prints "2"
 ```
 
 As usual, everything you want to know about sets can be found
@@ -393,21 +393,22 @@ The syntax for defining classes in Python is straightforward:
 
 ```python
 class Greeter(object):
-    
+
     # Constructor
     def __init__(self, name):
         self.name = name  # Create an instance variable
-        
+
     # Instance method
     def greet(self, loud=False):
         if loud:
-            print('HELLO, %s!'.format(self.name.upper())
+            print('HELLO, {}!'.format(self.upper()))
         else:
-            print('Hello, %s'.format(self.name))
-        
-g = Greeter('Stark')  # Construct an instance of the Greeter class
-g.greet()            # Call an instance method; prints "Hello, Fred"
-g.greet(loud=True)   # Call an instance method; prints "HELLO, STARK!"
+            print('Hello, {}'.format(self))
+
+
+g = Greeter('Stark')   # Construct an instance of the Greeter class
+g.greet()              # Call an instance method; prints "Hello, Fred"
+g.greet(loud=True)     # Call an instance method; prints "HELLO, STARK!"
 ```
 You can read a lot more about Python classes
 [in the documentation](https://docs.python.org/2/tutorial/classes.html).
