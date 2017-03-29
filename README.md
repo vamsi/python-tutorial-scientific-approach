@@ -642,14 +642,14 @@ Here is an example:
 ```python
 import numpy as np
 
-x = np.array([1, 2])  # Let numpy choose the datatype
-print(x.dtype)         # Prints "int64"
+x = np.array([1, 2])         # Let numpy choose the datatype
+print(x.dtype)               # Prints "int64"
 
-x = np.array([1.0, 2.0])  # Let numpy choose the datatype
-print(x.dtype)             # Prints "float64"
+x = np.array([1.0, 2.0])     # Let numpy choose the datatype
+print(x.dtype)               # Prints "float64"
 
 x = np.array([1, 2], dtype=np.int64)  # Force a particular datatype
-print(x.dtype)                         # Prints "int64"
+print(x.dtype)                        # Prints "int64"
 ```
 You can read all about numpy datatypes
 [in the documentation](http://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html).
@@ -662,24 +662,24 @@ both as operator overloads and as functions in the numpy module:
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]], dtype=np.float64)
-y = np.array([[5,6],[7,8]], dtype=np.float64)
+x = np.array([[1, 2], [3, 4]], dtype=np.float64)
+y = np.array([[5, 6], [7, 8]], dtype=np.float64)
 
 # Elementwise sum; both produce the array
-#  [[ 6.0  8.0]
-#  [10.0 12.0]]
+# [[ 6.0  8.0]
+# [10.0 12.0]]
 print(x + y)
 print(np.add(x, y))
 
 # Elementwise difference; both produce the array
-#  [[-4.0 -4.0]
-#  [-4.0 -4.0]]
+# [[-4.0 -4.0]
+# [-4.0 -4.0]]
 print(x - y)
 print(np.subtract(x, y))
 
 # Elementwise product; both produce the array
-#  [[ 5.0 12.0]
-#  [21.0 32.0]]
+# [[ 5.0 12.0]
+# [21.0 32.0]]
 print(x * y)
 print(np.multiply(x, y))
 
