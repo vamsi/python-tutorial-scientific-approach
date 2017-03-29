@@ -111,10 +111,9 @@ print(t != f)  # Logical XOR; prints "True"
 hello = 'hello'   # String literals can use single quotes
 world = "world"   # or double quotes; it does not matter.
 print(hello)       # Prints "hello"
-print(len(hello))  # String length; prints "5"
+print(len(hello))  # Prints string length
 message = hello + ' ' + world  # String concatenation
-print(message)  # prints "hello world"
-# sprintf style string formatting
+print(message)  # Prints "hello world"
 message_format = '%s %s %d' % (hello, world, 12)
 print(message_format)  # prints "hello world 12"
 ```
