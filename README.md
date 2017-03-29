@@ -189,10 +189,10 @@ for animal in animals:
 If you want access to the index of each element within the body of a loop, use the built-in `enumerate` function:
 
 ```python
-animals = ['cat', 'dog', 'monkey']
-for(idx, animal in enumerate(animals)):
+animals = ['Cat', 'Dog', 'Monkey']
+for idx, animal in enumerate(animals):
     print('#%d: %s' % (idx + 1, animal))
-# Prints "#1: cat", "#2: dog", "#3: monkey", each on its own line
+# Prints "#1: Cat", "#2: Dog", "#3: Monkey", each on its own line .
 ```
 
 **List comprehensions:**
