@@ -114,7 +114,8 @@ print(hello)       # Prints "hello"
 print(len(hello))  # String length; prints "5"
 message = hello + ' ' + world  # String concatenation
 print(message)  # prints "hello world"
-message_format = '%s %s %d' % (hello, world, 12)  # sprintf style string formatting
+# sprintf style string formatting
+message_format = '%s %s %d' % (hello, world, 12)
 print(message_format)  # prints "hello world 12"
 ```
 
