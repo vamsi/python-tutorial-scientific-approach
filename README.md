@@ -700,10 +700,10 @@ Note that unlike MATLAB, `*` is elementwise multiplication, not matrix multiplic
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]])
-y = np.array([[5,6],[7,8]])
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6], [7, 8]])
 
-v = np.array([9,10])
+v = np.array([9, 10])
 w = np.array([11, 12])
 
 # Inner product of vectors; both produce 219
@@ -727,7 +727,7 @@ arrays; one of the most useful is `sum`:
 ```python
 import numpy as np
 
-x = np.array([[1,2],[3,4]])
+x = np.array([[1, 2], [3, 4]])
 
 print(np.sum(x))  # Compute sum of all elements; prints "10"
 print(np.sum(x, axis=0))  # Compute sum of each column; prints "[4 6]"
@@ -738,20 +738,27 @@ You can find the full list of mathematical functions provided by NumPy [in the d
 Apart from computing mathematical functions using arrays, we frequently need to reshape or otherwise manipulate data in arrays. The simplest example of this type of operation is transposing a matrix; to transpose a matrix, simply use the `T` attribute of an array object:
 
 ```python
-
 import numpy as np
 
-x = np.array([[1,2], [3,4]])
-print(x)   # Prints "[[1 2]
-           #          [3 4]]"
-print(x.T) # Prints "[[1 3]
-           #          [2 4]]"
-
+x = np.array([[1, 2], [3, 4]])
+print(x)
+print(x.T)
 # Note that taking the transpose of a rank 1 array does nothing:
+v = np.array([1, 2, 3])
+print(v)
+print(v.T)
+"""
+Output
+[[1 2]
+ [3 4]]
 
-v = np.array([1,2,3])
-print(v)     # Prints "[1 2 3]"
-print(v.T)  # Prints "[1 2 3]"
+[[1 3]
+ [2 4]]
+
+[1 2 3]
+
+[1 2 3]
+"""
 
 ```
 
