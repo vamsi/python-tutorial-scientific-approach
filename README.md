@@ -69,7 +69,7 @@ familiar from other programming languages.
 
 ```python
 x = 3
-print type(x) # Prints "<type 'int'>"
+print(type(x)) # Prints "<type 'int'>"
 print(x)       # Prints "3"
 print(x + 1)   # Addition; prints "4"
 print(x - 1)   # Subtraction; prints "2"
