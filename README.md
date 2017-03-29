@@ -69,19 +69,20 @@ familiar from other programming languages.
 
 ```python
 x = 3
-print(type(x)) # Prints "<type 'int'>"
-print(x)       # Prints "3"
-print(x + 1)   # Addition; prints "4"
-print(x - 1)   # Subtraction; prints "2"
-print(x * 2)   # Multiplication; prints "6"
-print(x ** 2)  # Exponentiation; prints "9"
+print(type(x))  # Prints "<type 'int'>"
+print(x)        # Prints "3"
+print(x + 1)    # Addition; prints "4"
+print(x - 1)    # Subtraction; prints "2"
+print(x * 2)    # Multiplication; prints "6"
+print(x ** 2)   # Exponentiation; prints "9"
 x += 1
-print(x)  # Prints "4"
+print(x)        # Prints "4"
 x *= 2
-print(x)  # Prints "8"
+print(x)        # Prints "8"
 y = 2.5
-print(type(y)) # Prints "<type 'float'>"
-print(y, y + 1, y * 2, y ** 2) # Prints "2.5 3.5 5.0 6.25"
+print(type(y))  # Prints "<type 'float'>"
+print(y, y + 1, y * 2, y ** 2)  # Prints "2.5 3.5 5.0 6.25"
+
 ```
 
 Note that unlike many languages, Python does not have unary increment (`x++`)
@@ -108,12 +109,12 @@ print(t != f)  # Logical XOR; prints "True"
 **Strings:** Python has great support for strings:
 
 ```python
-hello = 'hello'   # String literals can use single quotes
-world = "world"   # or double quotes; it does not matter.
+hello = 'hello'    # String literals can use single quotes
+world = "world"    # or double quotes; it does not matter.
 print(hello)       # Prints "hello"
 print(len(hello))  # Prints string length
 message = hello + ' ' + world  # String concatenation
-print(message)  # Prints "hello world"
+print(message)     # Prints "hello world"
 message_format = '%s %s %d' % (hello, world, 12)
 print(message_format)  # prints "hello world 12"
 ```
@@ -122,8 +123,10 @@ String objects have a bunch of useful methods; for example:
 
 ```python
 s = "hello"
-print(s.capitalize())  # Capitalize a string prints, "Hello"
-print(s.upper())       # Convert a string to uppercase, prints "HELLO"
+print(s.capitalize())
+# Capitalize a string prints, "Hello"
+print(s.upper())
+# Convert a string to uppercase, prints "HELLO"
 print(s.rjust(7))
 # Right-justify a string, padding with spaces; prints "  hello"
 print(s.center(7))
@@ -147,15 +150,24 @@ A list is the Python equivalent of an array, but is resizable
 and can contain elements of different types:
 
 ```python
-nums = [3, 1, 2]   # Create a list
-print(nums, nums[2])  # Prints "[3, 1, 2] 2"
-print(nums[-1])   # Negative indices count from the end of the list prints "2"
-nums[2] = 'foo'    # Lists can contain elements of different types
-print(nums)        # Prints "[3, 1, 'foo']"
-nums.append('bar')  # Add a new element to the end of the list
-print(nums)        # Prints "[3, 1, 'foo', 'bar']"
-x = nums.pop()     # Remove and return the last element of the list
-print(x, nums)     # Prints "bar [3, 1, 'foo']"
+nums = [3, 1, 2]
+# Create a list
+print(nums, nums[2])
+# Prints "[3, 1, 2] 2"
+print(nums[-1])
+ # Negative indices count from the end of the list prints "2"
+nums[2] = 'foo'
+# Lists can contain elements of different types
+print(nums)
+# Prints "[3, 1, 'foo']"
+nums.append('bar')
+# Add a new element to the end of the list
+print(nums)
+# Prints "[3, 1, 'foo', 'bar']"
+x = nums.pop()
+# Remove and return the last element of the list
+print(x, nums)
+# Prints "bar [3, 1, 'foo']"
 ```
 As usual, you can find all the gory details about lists
 [in the documentation](https://docs.python.org/2/tutorial/datastructures.html#more-on-lists).
@@ -230,7 +242,7 @@ A dictionary stores (key, value) pairs, similar to a `Map` in Java. You can use 
 ```python
 d = {'cat': 'cute', 'dog': 'furry'}  # Create a new dictionary with some data
 
-print(d['cat'])       # Get an entry from a dictionary; prints "cute"
+print(d['cat'])      # Get an entry from a dictionary; prints "cute"
 
 print('cat' in d)    # Check if a dictionary has a given key; 
 prints "True"
@@ -238,7 +250,7 @@ prints "True"
 d['fish'] = 'wet'    # Set an entry in a dictionary
 print(d['fish'])     # Prints "wet"
 
-# print(d['monkey'])  # KeyError: 'monkey' not a key of d
+# print(d['monkey']) # KeyError: 'monkey' not a key of d
 
 print(d.get('monkey', 'N/A'))  # Get an element with a default; prints "N/A"
 
@@ -288,7 +300,7 @@ the following:
 animals = {'cat', 'dog'}
 print('cat' in animals)   # Check if an element is in a set; prints "True"
 print('fish' in animals)  # prints "False"
-animals.add('fish')      # Add an element to a set
+animals.add('fish')       # Add an element to a set
 print('fish' in animals)  # Prints "True"
 print(len(animals))       # Number of elements in a set; prints "3"
 # Adding an element that is already in the set does nothing
@@ -355,6 +367,7 @@ def sign(x):
     else:
         return 'zero'
 
+
 for x in [-1, 0, 1]:
     print(sign(x))
 # Prints "negative", "zero", "positive"
@@ -363,13 +376,14 @@ for x in [-1, 0, 1]:
 We will often define functions to take optional keyword arguments, like this:
 
 ```python
-def hello(name, loud=False):
+def hello(name, loud=True):
     if loud:
-        print('HELLO, %s!'.format(name.upper()))
+        print('HELLO, {}!'.format(name.upper()))
     else:
-        print('Hello, %s'.format(name))
+        print('Hello, {}'.format(name))
 
-hello('Stark') # Prints "Hello, Stark"
+
+hello('Stark')            # Prints "Hello, Stark"
 hello('Bond', loud=True)  # Prints "HELLO, BOND!"
 ```
 
