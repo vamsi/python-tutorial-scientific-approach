@@ -970,11 +970,13 @@ imsave('../images/nlena_std.tif', img_tinted)
 
 Input Image
 
-[!Image of lena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/lena_std.png?token=APjWVCwUyo3f-mGiN_-3lulXzrGheX3-ks5Y7ekewA%3D%3D)
+
+![Image of Lena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/lena_std.png?token=APjWVCwUyo3f-mGiN_-3lulXzrGheX3-ks5Y7ekewA%3D%3D)
 
 Output Image
 
-[!Image of nlena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/nlena_std.png?token=APjWVDH8j8LCEkjj25nhqlcRr5BNF_X0ks5Y7ekSwA%3D%3D)
+
+![Image of NLena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/nlena_std.png?token=APjWVDH8j8LCEkjj25nhqlcRr5BNF_X0ks5Y7ekSwA%3D%3D)
 
 
 
@@ -1056,7 +1058,7 @@ plt.show()
 Running this code produces the following plot:
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine.png'>
+  <img src='/images/sine.png'>
 </div>
 
 With just a little bit of extra work we can easily plot multiple lines
@@ -1084,7 +1086,7 @@ plt.show()
 
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine_cosine.png'>
+  <img src='/images/sine-cosine.png'>
 </div>
 
 You can read much more about the `plot` function
@@ -1122,7 +1124,7 @@ plt.show()
 ```
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine_cosine_subplot.png'>
+  <img src='/images/sine_cosine_subplot.png'>
 </div>
 
 You can read much more about the `subplot` function
