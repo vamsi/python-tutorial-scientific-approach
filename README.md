@@ -948,7 +948,7 @@ Here is a simple example that showcases these functions:
 from scipy.misc import imread, imsave, imresize
 
 # Read an JPEG image into a numpy array
-img = imread('assets/lisa.jpg')
+img = imread('../images/lena_std.tif')
 print(img.dtype, img.shape)  # Prints "uint8 (400, 248, 3)"
 
 """
@@ -965,8 +965,18 @@ img_tinted = img * [1, 0.95, 0.9]
 img_tinted = imresize(img_tinted, (300, 300))
 
 # Write the tinted image back to disk
-imsave('assets/cat_tinted.jpg', img_tinted)
+imsave('../images/nlena_std.tif', img_tinted)
 ```
+
+Input Image
+
+
+![Image of Lena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/lena_std.png?token=APjWVCwUyo3f-mGiN_-3lulXzrGheX3-ks5Y7ekewA%3D%3D)
+
+Output Image
+
+
+![Image of NLena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/nlena_std.png?token=APjWVDH8j8LCEkjj25nhqlcRr5BNF_X0ks5Y7ekSwA%3D%3D)
 
 
 
@@ -1048,7 +1058,7 @@ plt.show()
 Running this code produces the following plot:
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine.png'>
+  <img src='/images/sine.png'>
 </div>
 
 With just a little bit of extra work we can easily plot multiple lines
@@ -1076,7 +1086,7 @@ plt.show()
 
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine_cosine.png'>
+  <img src='/images/sine-cosine.png'>
 </div>
 
 You can read much more about the `plot` function
@@ -1114,7 +1124,7 @@ plt.show()
 ```
 
 <div class='fig figcenter fighighlight'>
-  <img src='/assets/sine_cosine_subplot.png'>
+  <img src='/images/sine_cosine_subplot.png'>
 </div>
 
 You can read much more about the `subplot` function
@@ -1130,7 +1140,7 @@ import numpy as np
 from scipy.misc import imread
 import matplotlib.pyplot as plt
 
-img = imread('assets/cat.jpg')
+img = imread('test-image.tif')
 img_tinted = img * [1, 0.95, 0.9]
 
 # Show the original image
@@ -1149,4 +1159,7 @@ explicitly cast the image to uint8 before displaying it.
 plt.imshow(np.uint8(img_tinted))
 plt.show()
 ```
+
+
+![Image of Lena](http://funkyimg.com/i/2rmun.png)
 
