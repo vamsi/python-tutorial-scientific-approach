@@ -948,7 +948,7 @@ Here is a simple example that showcases these functions:
 from scipy.misc import imread, imsave, imresize
 
 # Read an JPEG image into a numpy array
-img = imread('assets/lisa.jpg')
+img = imread('../images/lena_std.tif')
 print(img.dtype, img.shape)  # Prints "uint8 (400, 248, 3)"
 
 """
@@ -965,7 +965,7 @@ img_tinted = img * [1, 0.95, 0.9]
 img_tinted = imresize(img_tinted, (300, 300))
 
 # Write the tinted image back to disk
-imsave('assets/cat_tinted.jpg', img_tinted)
+imsave('../images/nlena_std.tif', img_tinted)
 ```
 
 
@@ -1130,7 +1130,7 @@ import numpy as np
 from scipy.misc import imread
 import matplotlib.pyplot as plt
 
-img = imread('assets/cat.jpg')
+img = imread('test-image.tif')
 img_tinted = img * [1, 0.95, 0.9]
 
 # Show the original image
@@ -1149,4 +1149,7 @@ explicitly cast the image to uint8 before displaying it.
 plt.imshow(np.uint8(img_tinted))
 plt.show()
 ```
+
+
+![Image of Lena](http://funkyimg.com/i/2rmun.png)
 
