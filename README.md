@@ -968,6 +968,14 @@ img_tinted = imresize(img_tinted, (300, 300))
 imsave('../images/nlena_std.tif', img_tinted)
 ```
 
+Input Image
+
+[!Image of lena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/lena_std.png?token=APjWVCwUyo3f-mGiN_-3lulXzrGheX3-ks5Y7ekewA%3D%3D)
+
+Output Image
+
+[!Image of nlena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/nlena_std.png?token=APjWVDH8j8LCEkjj25nhqlcRr5BNF_X0ks5Y7ekSwA%3D%3D)
+
 
 
 
