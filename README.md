@@ -971,12 +971,15 @@ imsave('../images/nlena_std.tif', img_tinted)
 Input Image
 
 
-![Image of Lena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/lena_std.png?token=APjWVCwUyo3f-mGiN_-3lulXzrGheX3-ks5Y7ekewA%3D%3D)
-
+<div class='fig figcenter fighighlight'>
+  <img src='/images/lena_std.png'>
+</div>
 Output Image
 
 
-![Image of NLena](https://raw.githubusercontent.com/vihar/python-tutorial-scientific-approach/master/images/nlena_std.png?token=APjWVDH8j8LCEkjj25nhqlcRr5BNF_X0ks5Y7ekSwA%3D%3D)
+<div class='fig figcenter fighighlight'>
+  <img src='/images/nlena_std.png'>
+</div>
 
 
 
@@ -1161,5 +1164,6 @@ plt.show()
 ```
 
 
-![Image of Lena](http://funkyimg.com/i/2rmun.png)
-
+<div class='fig figcenter fighighlight'>
+  <img src='/images/tinted.png'>
+</div>
